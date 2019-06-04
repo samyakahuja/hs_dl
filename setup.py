@@ -7,7 +7,7 @@ def readme_file():
 
 setup(
     name="hs_dl",
-    version="1.0.0",
+    version="1.0.1",
     description="Simple Horrible Subs Downloader",
     long_description=readme_file(),
     author="samyak",

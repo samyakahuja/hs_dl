@@ -64,7 +64,6 @@ Todo
 ----
 
 - Implement selective torrent downloading
-- Implement Multiprocessing pool
-- Automate torrent adding to client like qbittorent
+- Automate torrent adding to clients like qbittorent
 
 

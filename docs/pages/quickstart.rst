@@ -59,5 +59,4 @@ Answers to FAQ
 
 - hs_dl is short for HorribleSubs Downloader.
 - As of yet you can only download torrents for entire show.
-- Yeah I know its kinda slow! (‾ʖ̫‾)
 

@@ -4,6 +4,7 @@ import re
 import requests
 from requests_html import HTMLSession
 import tempfile
+from time import sleep
 from urllib.parse import urlencode
 
 
@@ -20,13 +21,28 @@ class HorribleDownloader:
 
 
     def download_torrent(self, link):
-        if self.dry_run:
-           print(f"[ ] Would Download {link['torrent_file_name']} at {link['torrent_file_path']}]") 
-           return
-        res = requests.get(link['torrent_link'])
-        with open(link['torrent_file_path'], 'wb') as f:
-            f.write(res.content)
-            print(f"[+] Downloaded {link['torrent_file_path']}")
+        tries = 3
+        while tries > 0:
+            if self.dry_run:
+               print(f"[ ] Would Download {link['torrent_file_name']} at {link['torrent_file_path']}]") 
+               return
+            res = requests.get(link['torrent_link'])
+            if res.status_code != 200:
+                tries -= 1
+                if self.verbose:
+                    print(f"[~] Got status code: {res.status_code} for {link['torrent_file_name']}")
+                '''
+                getting 429 http status code on multiple requests
+                that's why sleep for 1 second since api doesn't
+                provide any sleep_till header in response
+                '''
+                sleep(1)
+                continue
+            with open(link['torrent_file_path'], 'wb') as f:
+                f.write(res.content)
+                print(f"[+] Downloaded {link['torrent_file_path']}")
+                return
+        print(f"[-] Couldn't Download {link['torrent_file_path']}")
    
 
     def download_torrents(self):
@@ -106,7 +122,7 @@ class HorribleDownloader:
 
         # create thread pool
         pool = Pool(self.workers)
-        for result in pool.imap_unordered(self.download_torrent, self.torrent_links):
+        for result in pool.map(self.download_torrent, self.torrent_links):
             pass
 
         if self.dry_run:

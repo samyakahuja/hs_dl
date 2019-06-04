@@ -1,6 +1,10 @@
 HorribleSubs Downloader
 =======================
 
+.. image:: https://readthedocs.org/projects/hs-dl/badge/?version=latest
+    :target: https://hs-dl.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 Inspiration
 -----------
 
@@ -11,7 +15,7 @@ Introduction
 ------------
 
 hs_dl (written in python3) takes in an anime_link that corresponds to the show
-page on horrible subs for the anime you want to download torrents for.
+page on horrible subs for which you want to download torrents for.
 
 PyPI package
 ------------
@@ -23,32 +27,30 @@ Installation
 
 .. code:: shell
     
-    python3 -m pip install hs_dl
+    python -m pip install hs_dl
 
-Running
--------
+Documentation
+-------------
 
-**Basic**
+Online Documentation can be found here:
+
+
+You can also view the documentation in the `docs/` directory.
+
+Build it by running
+
 .. code:: shell
-    
-    python hs_dl https://horriblesubs.info/shows/shingeki-no-kyojin/
 
-**Specifying quality**
-.. code:: shell
-    
-    python hs_dl https://horriblesubs.info/shows/shingeki-no-kyojin/ -q 720   
+    cd docs
+    make html
 
-**Dry Mode**
-.. code:: shell    
-    
-    python hs_dl https://horriblesubs.info/shows/shingeki-no-kyojin/ -q 720 -n
+Then open `docs/_build/html/index.html` for web page.
 
-For more options try: `python hs_dl -h`
 
 Source Code
 -----------
 
-Private for now
+https://github.com/samyakahuja/hs_dl
 
 
 Todo

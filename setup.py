@@ -17,6 +17,10 @@ setup(
         'docopt', 
         'requests',
         'requests-html'
-    ]
+    ],
+    project_urls={
+        "Documentation": "http://hs-dl.readthedocs.io/",
+        "Source Code": "https://github.com/samyakahuja/hs_dl",
+    }
 )
 

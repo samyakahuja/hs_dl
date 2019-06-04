@@ -5,6 +5,12 @@ HorribleSubs Downloader
     :target: https://hs-dl.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://badge.fury.io/py/hs-dl.svg
+    :target: https://badge.fury.io/py/hs-dl
+
+.. image:: https://badge.fury.io/gh/samyakahuja%2Fhs_dl.svg
+    :target: https://badge.fury.io/gh/samyakahuja%2Fhs_dl
+
 Inspiration
 -----------
 

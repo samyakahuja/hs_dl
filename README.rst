@@ -34,6 +34,7 @@ Documentation
 
 Online Documentation can be found here:
 
+https://hs-dl.readthedocs.io
 
 You can also view the documentation in the `docs/` directory.
 
